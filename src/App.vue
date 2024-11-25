@@ -1,22 +1,18 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <NavigationComponent />
-    <TextImageComponent />
+    <router-view />
   </div>
 </template>
 
 <script>
 import NavigationComponent from './components/NavigationComponent.vue'
-import TextImageComponent from './components/TextImageComponent.vue'
 
 export default {
   name: 'App',
   components: {
-    // HelloWorld,
-    NavigationComponent,
-    TextImageComponent
+    NavigationComponent
   }
 }
 </script>

@@ -1,10 +1,7 @@
-
 <template>
   <nav class="navigation">
-    <button>Accueil</button>
-    <button>À propos</button>
-    <button>Services</button>
-    <button>Contact</button>
+    <router-link to="/">Accueil</router-link>
+    <router-link to="/contact">Contact</router-link>
   </nav>
 </template>
 
@@ -21,9 +18,11 @@ export default {
   gap: 10px;
   margin: 20px 0;
 }
-button {
+router-link {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 </style>
