@@ -1,4 +1,3 @@
-
 <template>
   <form @submit.prevent="submitForm">
     <div>
@@ -30,23 +29,49 @@ export default {
   methods: {
     async submitForm() {
       const payload = {
-        content: `Nom: ${this.name}\nEmail: ${this.email}\nMessage: ${this.message}`
+        embeds: [
+          {
+            title: `Nouveau message de ${this.name}`,
+            description: "Vous avez reçu un nouveau message.",
+            fields: [
+              {
+                name: "Nom",
+                value: `\`\`\`${this.name}\`\`\``,
+                inline: true
+              },
+              {
+                name: "Email",
+                value: `\`\`\`${this.email}\`\`\``,
+                inline: true
+              },
+              {
+                name: "Message",
+                value: `\`\`\`${this.message}\`\`\``
+              }
+            ],
+            color: 16747526,
+            footer: {
+              text: "Par Tom et Luonin",
+              icon_url: "https://example.com/icon.png" // URL de l'icône du footer
+            },
+            timestamp: new Date()
+          }
+        ]
       };
       try {
-        await fetch('https://discord.com/api/webhooks/1309485318969495572/IHGFgyq3BCa0c4heSp4vTMNnAgrJFsqkomH3xjoG_WcZo7ip8MztNOPuHyljpna8nMsb', {
+        await fetch('https://discord.com/api/webhooks/1312048846678921227/8rBhPU8ZMT3ptIHvY-0HXfm-tjmplHIBCOJfT1wyFi48Fmg6CjWzC411XyPMzk90tKs9', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify(payload)
         });
-        alert('Message envoyé avec succès!');
       } catch (error) {
-        alert('Erreur lors de l\'envoi du message.');
+        console.error('Erreur lors de l\'envoi du formulaire:', error);
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
