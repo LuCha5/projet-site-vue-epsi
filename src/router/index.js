@@ -1,28 +1,18 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HomePage from '../views/Home.vue'
+import AboutPage from '../views/About.vue'
+import ApiPage from '../views/Api.vue'
 import ContactPage from '../views/Contact.vue'
-import AboutPage from '../views/About.vue' // Importez la page "À propos"
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'HomePage',
-      component: HomePage
-    },
-    {
-      path: '/contact',
-      name: 'ContactPage',
-      component: ContactPage
-    },
-    {
-      path: '/about', // Ajoutez la route pour la page "À propos"
-      name: 'AboutPage',
-      component: AboutPage
-    }
-  ]
-})
+    { path: '/', name: 'Home', component: HomePage },
+    { path: '/about', name: 'About', component: AboutPage },
+    { path: '/api', name: 'API', component: ApiPage },
+    { path: '/contact', name: 'Contact', component: ContactPage },
+  ],
+});

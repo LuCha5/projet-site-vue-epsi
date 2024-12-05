@@ -7,19 +7,39 @@
         <div class="gauche">
           <div class="groupe">
             <label for="name">Votre Prénom</label>
-            <input type="text" v-model="name" autocomplete="off" required />
+            <input
+              type="text"
+              v-model="name"
+              autocomplete="off"
+              @input="clearError('name')"
+              required
+            />
+            <span v-if="errors.name" class="error">{{ errors.name }}</span>
             <i class="fas fa-user"></i>
           </div>
           <div class="groupe">
             <label for="email">Votre adresse e-mail</label>
-            <input type="email" v-model="email" autocomplete="off" required />
+            <input
+              type="email"
+              v-model="email"
+              autocomplete="off"
+              @input="clearError('email')"
+              required
+            />
+            <span v-if="errors.email" class="error">{{ errors.email }}</span>
             <i class="fas fa-envelope"></i>
           </div>
         </div>
         <div class="droite">
           <div class="groupe">
             <label for="message">Message</label>
-            <textarea v-model="message" placeholder="Saisissez ici..." required></textarea>
+            <textarea
+              v-model="message"
+              @input="clearError('message')"
+              placeholder="Saisissez ici..."
+              required
+            ></textarea>
+            <span v-if="errors.message" class="error">{{ errors.message }}</span>
           </div>
         </div>
       </div>
@@ -33,17 +53,46 @@
 
 <script>
 export default {
-  name: 'ContactFormComponent',
+  name: "ContactFormComponent",
   data() {
     return {
-      name: '',
-      email: '',
-      message: '',
-      notification: '',
+      name: "",
+      email: "",
+      message: "",
+      notification: "",
+      errors: {
+        name: null,
+        email: null,
+        message: null,
+      },
     };
   },
   methods: {
+    validateForm() {
+      let valid = true;
+      if (!this.name.trim()) {
+        this.errors.name = "Le prénom est requis.";
+        valid = false;
+      }
+      if (
+        !this.email.trim() ||
+        !/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(this.email)
+      ) {
+        this.errors.email = "Une adresse e-mail valide est requise.";
+        valid = false;
+      }
+      if (!this.message.trim()) {
+        this.errors.message = "Le message ne peut pas être vide.";
+        valid = false;
+      }
+      return valid;
+    },
+    clearError(field) {
+      this.errors[field] = null;
+    },
     async submitForm() {
+      if (!this.validateForm()) return;
+
       const payload = {
         embeds: [
           {
@@ -65,35 +114,27 @@ export default {
 
       try {
         const response = await fetch(
-          'https://discord.com/api/webhooks/1312048846678921227/8rBhPU8ZMT3ptIHvY-0HXfm-tjmplHIBCOJfT1wyFi48Fmg6CjWzC411XyPMzk90tKs9',
+          "https://discord.com/api/webhooks/1312048846678921227/8rBhPU8ZMT3ptIHvY-0HXfm-tjmplHIBCOJfT1wyFi48Fmg6CjWzC411XyPMzk90tKs9",
           {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
           }
         );
 
         if (!response.ok) throw new Error(`Erreur : ${response.status} ${response.statusText}`);
 
-        // Ne pas tenter de lire le JSON pour un code 204 (No Content)
-        if (response.status === 204) {
-          this.notification = 'Message envoyé avec succès!';
-          this.$emit('formSubmitted', { success: true });
-        } else {
-          const result = await response.json();
-          this.notification = 'Message envoyé avec succès!';
-          this.$emit('formSubmitted', result);
-        }
+        this.notification = "Message envoyé avec succès!";
+        this.clearForm();
       } catch (error) {
-        console.error('Erreur lors de l\'envoi du formulaire:', error);
-        this.notification = 'Erreur lors de l\'envoi du message.';
-        this.$emit('formSubmitted', { error: error.message });
+        console.error("Erreur lors de l'envoi du formulaire:", error);
+        this.notification = "Erreur lors de l'envoi du message.";
       }
     },
     clearForm() {
-      this.name = '';
-      this.email = '';
-      this.message = '';
+      this.name = "";
+      this.email = "";
+      this.message = "";
     },
   },
 };
@@ -101,7 +142,7 @@ export default {
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css");
 
 body {
   margin: 0px;
@@ -148,7 +189,6 @@ form .corps-formulaire {
 
 form .corps-formulaire .groupe {
   position: relative;
-  /* Pour mettre positionner l’élément dans le flux normal de la page */
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -164,7 +204,6 @@ form .corps-formulaire .gauche .groupe input {
 
 form .corps-formulaire .gauche .groupe i {
   position: absolute;
-  /* positionné par rapport à son parent le plus proche positionné */
   left: 0;
   top: 25px;
   padding: 9px 8px;
@@ -175,10 +214,6 @@ form .corps-formulaire .droite {
   margin-left: 40px;
 }
 
-form .corps-formulaire .droite .groupe {
-  height: 100%;
-}
-
 form .corps-formulaire .droite .groupe textarea {
   margin-top: 5px;
   padding: 10px;
@@ -187,7 +222,7 @@ form .corps-formulaire .droite .groupe textarea {
   outline: none;
   border-radius: 5px;
   resize: none;
-  height: 72%;
+  height: 6rem;
 }
 
 form .pied-formulaire button {
@@ -207,12 +242,6 @@ form .pied-formulaire button:hover {
   transform: scale(1.05);
 }
 
-@media screen and (max-width: 920px) {
-  form .corps-formulaire .droite {
-    margin-left: 0px;
-  }
-}
-
 .notification {
   margin-top: 10px;
   padding: 10px;
@@ -220,5 +249,11 @@ form .pied-formulaire button:hover {
   color: white;
   border-radius: 5px;
   text-align: center;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
 </style>
