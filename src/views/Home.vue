@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="home">
+    <div>Contenu de la page d'accueil</div>
     <TextImageComponent />
   </div>
 </template>
@@ -14,7 +15,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-/* Ajoutez des styles spécifiques à la page d'accueil ici */
-</style>
