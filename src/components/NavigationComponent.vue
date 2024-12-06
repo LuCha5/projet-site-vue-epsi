@@ -24,10 +24,11 @@ export default {
 
 .navbar {
   display: flex;
-  justify-content: space-between; /* Assure que les divs sont de chaque côté du logo */
   align-items: center;
   padding: 10px 20px;
   background-color: #333;
+  margin-bottom: 20px; /* Ajoutez une marge en bas pour éviter que le contenu soit caché sous la navbar */
+  font-family: "Roboto", sans-serif;
 }
 
 .nav-link {
