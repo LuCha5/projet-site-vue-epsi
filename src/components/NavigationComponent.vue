@@ -8,12 +8,12 @@
     <div class="nav-right">
       <router-link to="/api" class="nav-link">Api</router-link>
       <router-link to="/contact" class="nav-link">Contact</router-link>
+      <router-link to="/home" class="nav-link">Home avec Accordéon</router-link>
     </div>
   </nav>
 </template>
 
 <script>
-
 export default {
   name: 'NavigationComponent'
 }
@@ -28,8 +28,6 @@ export default {
   align-items: center;
   padding: 10px 20px;
   background-color: #333;
-  margin-bottom: 20px; /* Ajoutez une marge en bas pour éviter que le contenu soit caché sous la navbar */
-  font-family: "Roboto", sans-serif;
 }
 
 .nav-link {
