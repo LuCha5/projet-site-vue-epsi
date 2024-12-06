@@ -1,24 +1,14 @@
-import TextImageComponent2 from './TextImageComponent2.vue';
-
 <template>
-  <div>
-    <div class="text-image">
-      <h2>Bienvenue sur notre site</h2>
-      <img src="@/assets/default.jpg" alt="Default Image"> <!-- Changez le chemin de l'image -->
-      <p>Voici un exemple de texte avec une image.</p>
-    </div>
-    <TextImageComponent2 />
+  <div class="text-image">
+    <h2>Bienvenue sur notre site - Partie 2</h2>
+    <img src="@/assets/default2.jpg" alt="Default Image 2"> <!-- Changez le chemin de l'image -->
+    <p>Voici un autre exemple de texte avec une image.</p>
   </div>
 </template>
 
 <script>
-import TextImageComponent2 from './TextImageComponent2.vue';
-
 export default {
-  name: 'TextImageComponent',
-  components: {
-    TextImageComponent2
-  }
+  name: 'TextImageComponent2'
 }
 </script>
 
