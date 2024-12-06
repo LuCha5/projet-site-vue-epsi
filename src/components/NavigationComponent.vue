@@ -2,13 +2,14 @@
   <nav class="navbar">
     <div class="nav-left">
       <router-link to="/" class="nav-link">Accueil</router-link>
-      <router-link to="/about" class="nav-link">À propos</router-link>
+      <router-link to="/jokes" class="nav-link">À propos</router-link>
     </div>
+    <router-link to="/" class="nav-link">
     <img alt="Vue logo" src="@/assets/logo.png" class="logo">
+    </router-link>
     <div class="nav-right">
       <router-link to="/api" class="nav-link">Api</router-link>
       <router-link to="/contact" class="nav-link">Contact</router-link>
-      <router-link to="/home" class="nav-link">Home avec Accordéon</router-link>
     </div>
   </nav>
 </template>
@@ -25,6 +26,7 @@ export default {
 .navbar {
   display: flex;
   align-items: center;
+  justify-content: center; /* Centrer la navbar */
   padding: 10px 20px;
   background-color: #333;
   margin-bottom: 20px; /* Ajoutez une marge en bas pour éviter que le contenu soit caché sous la navbar */
@@ -49,5 +51,6 @@ export default {
 .nav-right, .nav-left {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Espacer les éléments à gauche et à droite */
 }
 </style>

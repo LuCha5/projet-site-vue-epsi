@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="jokes">
     <AboutContent />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.about {
+.jokes {
   padding: 20px;
   text-align: center;
   margin-top: 60px; /* Ajoutez une marge en haut pour éviter que le contenu soit caché sous la navbar */
