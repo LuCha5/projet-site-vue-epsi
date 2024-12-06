@@ -2,7 +2,7 @@
   <nav class="navbar">
     <div class="nav-left">
       <router-link to="/" class="nav-link">Accueil</router-link>
-      <router-link to="/jokes" class="nav-link">À propos</router-link>
+      <router-link to="/jokes" class="nav-link">Jokes</router-link>
     </div>
     <router-link to="/" class="nav-link">
     <img alt="Vue logo" src="@/assets/logo.png" class="logo">
