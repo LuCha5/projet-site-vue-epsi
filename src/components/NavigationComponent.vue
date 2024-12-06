@@ -6,7 +6,7 @@
     </div>
     <img alt="Vue logo" src="@/assets/logo.png" class="logo">
     <div class="nav-right">
-      <router-link to="/services" class="nav-link">Services</router-link>
+      <router-link to="/api" class="nav-link">Api</router-link>
       <router-link to="/contact" class="nav-link">Contact</router-link>
     </div>
   </nav>
