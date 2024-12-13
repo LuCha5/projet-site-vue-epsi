@@ -136,12 +136,12 @@ export default {
 
 <style scoped>
 .api-component {
-  width: 100vw;
+  width: 90vw;
   height: 90vh;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .form-container,
@@ -162,6 +162,10 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px; /* Ajout de cette ligne pour ajouter de l'espace entre les éléments du formulaire */
 }
 
 .result {
