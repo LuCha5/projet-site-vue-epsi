@@ -1,5 +1,5 @@
 <template>
-  <div class="about-content">
+  <div class="jokes-content">
     <h1>À propos</h1>
     <p>Ceci est la page à propos.</p>
     <section>
@@ -31,7 +31,7 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
-.about-content {
+.jokes-content {
   padding: 20px;
   text-align: center;
   font-family: "Roboto", sans-serif;
@@ -39,31 +39,31 @@ export default {
   border-radius: 10px;
 }
 
-.about-content h1 {
+.jokes-content h1 {
   font-size: 24px;
   color: #333;
 }
 
-.about-content p {
+.jokes-content p {
   font-size: 16px;
   color: #666;
 }
 
-.about-content section {
+.jokes-content section {
   margin-top: 20px;
 }
 
-.about-content h2 {
+.jokes-content h2 {
   font-size: 20px;
   color: #333;
 }
 
-.about-content ul {
+.jokes-content ul {
   list-style-type: none;
   padding: 0;
 }
 
-.about-content li {
+.jokes-content li {
   font-size: 16px;
   color: #666;
   margin-top: 10px;

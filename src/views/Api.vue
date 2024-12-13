@@ -1,7 +1,6 @@
 <template>
   <div class="api">
-    <div>Contenu de la page d'accueil</div>
-    <TextImageComponent />
+    <TextImageComponent/>
   </div>
 </template>
 

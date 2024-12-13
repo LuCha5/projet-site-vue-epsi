@@ -169,6 +169,7 @@ form {
   padding: 30px;
   background-color: white;
   border-radius: 10px;
+  border: 2px solid #35495e;
 }
 
 form h1 {
