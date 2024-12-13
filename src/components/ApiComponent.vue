@@ -165,7 +165,7 @@ h2 {
 }
 
 .form-group {
-  margin-bottom: 20px; /* Ajout de cette ligne pour ajouter de l'espace entre les éléments du formulaire */
+  margin-bottom: 20px;
 }
 
 .result {
