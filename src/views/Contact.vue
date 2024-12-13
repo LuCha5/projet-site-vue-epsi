@@ -17,7 +17,7 @@ export default {
   },
   data() {
     return {
-      resultMessage: '', // Stocke le message de résultat
+      resultMessage: '',
     };
   },
   methods: {

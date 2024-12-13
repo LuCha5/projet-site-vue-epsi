@@ -1,10 +1,8 @@
 <template>
     <div class="api-component">
-        <!-- Conteneur du formulaire -->
         <div class="form-container">
             <h2>Test API</h2>
             <form @submit.prevent="callApi">
-                <!-- Champ pour l'URL de l'API -->
                 <div class="form-group">
                     <label for="url">URL API :</label>
                     <input
@@ -18,7 +16,6 @@
                     <span v-if="errors.url" class="error">{{ errors.url }}</span>
                 </div>
 
-                <!-- Sélection de la méthode HTTP -->
                 <div class="form-group">
                     <label for="method">Méthode :</label>
                     <select id="method" v-model="method" @change="clearError('method')" required>
@@ -30,7 +27,6 @@
                     <span v-if="errors.method" class="error">{{ errors.method }}</span>
                 </div>
 
-                <!-- Paramètres (JSON) -->
                 <div class="form-group">
                     <label for="params">Paramètres :</label>
                     <textarea
@@ -42,12 +38,10 @@
                     <span v-if="errors.params" class="error">{{ errors.params }}</span>
                 </div>
 
-                <!-- Bouton pour soumettre -->
                 <button type="submit">Appeler l'API</button>
             </form>
         </div>
 
-        <!-- Bloc pour afficher le résultat -->
         <div class="result-container">
             <h2>Résultat</h2>
             <div class="result">

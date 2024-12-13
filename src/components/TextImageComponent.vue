@@ -1,10 +1,8 @@
-import TextImageComponent2 from './TextImageComponent2.vue';
-
 <template>
   <div>
     <div class="text-image">
       <h2>Bienvenue sur notre site</h2>
-      <img :src="require('@/assets/default.jpg')" alt="Default Image"> <!-- Changez le chemin de l'image -->
+      <img :src="require('@/assets/default.jpg')" alt="Default Image">
       <p>Voici un exemple de texte avec une image.</p>
     </div>
     <TextImageComponent2 />

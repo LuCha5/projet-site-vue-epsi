@@ -58,7 +58,7 @@ button {
   font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-  margin-bottom: 10px; /* Ajouter un espacement entre les boutons */
+  margin-bottom: 10px;
 }
 
 button:hover {

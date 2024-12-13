@@ -24,7 +24,5 @@ a:hover {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 0; /* Supprimer la marge supérieure */
+  margin-top: 0;
 }
-
-/* Supprimer les styles de la barre de navigation */
