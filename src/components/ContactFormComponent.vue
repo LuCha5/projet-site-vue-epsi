@@ -114,7 +114,7 @@ export default {
 
       try {
         const response = await fetch(
-          "https://discord.com/api/webhooks/1312048846678921227/8rBhPU8ZMT3ptIHvY-0HXfm-tjmplHIBCOJfT1wyFi48Fmg6CjWzC411XyPMzk90tKs9",
+          "https://discord.com/api/webhooks/1309485318969495572/IHGFgyq3BCa0c4heSp4vTMNnAgrJFsqkomH3xjoG_WcZo7ip8MztNOPuHyljpna8nMsb",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
