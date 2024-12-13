@@ -10,6 +10,7 @@
     <div class="nav-right">
       <router-link to="/api" class="nav-link">Api</router-link>
       <router-link to="/contact" class="nav-link">Contact</router-link>
+      <router-link to="/accordion" class="nav-link">Accordion</router-link>
     </div>
   </nav>
 </template>

@@ -4,6 +4,7 @@ import HomePage from '../views/Home.vue'
 import AboutPage from '../views/Jokes.vue'
 import ApiPage from '../views/Api.vue'
 import ContactPage from '../views/Contact.vue'
+import AccordionPage from '../views/Accordion.vue'
 
 Vue.use(Router);
 
@@ -14,5 +15,6 @@ export default new Router({
     { path: '/jokes', name: 'Jokes', component: AboutPage },
     { path: '/api', name: 'API', component: ApiPage },
     { path: '/contact', name: 'Contact', component: ContactPage },
+    { path: '/accordion', name: 'Accordion', component: AccordionPage },
   ],
 });

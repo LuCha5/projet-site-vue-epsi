@@ -1,7 +1,7 @@
 <template>
-  <div class="text-image">
+  <div class="text-image-component">
+    <img :src="require('@/assets/default2.jpg')" alt="Default Image" />
     <h2>Bienvenue sur notre site - Partie 2</h2>
-    <img src="@/assets/default2.jpg" alt="Default Image 2"> <!-- Changez le chemin de l'image -->
     <p>Voici un autre exemple de texte avec une image.</p>
   </div>
 </template>
